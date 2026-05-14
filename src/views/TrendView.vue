@@ -189,7 +189,7 @@ const isToday = (dateStr: string) => dateStr === last7Dates.value[last7Dates.val
           class="flex-1 flex flex-col items-center gap-1"
         >
           <span class="text-xs text-gray-400 leading-none" style="min-height: 1rem">
-            {{ caloriesByDate[i] > 0 ? caloriesByDate[i] : '' }}
+            {{ (caloriesByDate[i] ?? 0) > 0 ? caloriesByDate[i] : '' }}
           </span>
           <div class="w-full flex items-end justify-center" style="height: 60px">
             <div
