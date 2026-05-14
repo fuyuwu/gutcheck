@@ -1,73 +1,80 @@
-# gutcheck
+# Gutcheck 🥗
 
-This template should help get you started developing with Vue 3 in Vite.
+> Track your meals, weight, and body stats — built for Taiwan.
 
-## Recommended IDE Setup
+Gutcheck is a lightweight personal food and body tracker designed to fix what MyFitnessPal gets wrong for Taiwanese users — fuzzy food search, flexible portion sizes, and a tag system that actually makes sense.
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+---
 
-## Recommended Browser Setup
+## Why Gutcheck?
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+Most food trackers assume you eat at chain restaurants with standardized portions. Gutcheck is built around how people in Taiwan actually eat:
 
-## Type Support for `.vue` Imports in TS
+- **Fuzzy search** — type "雞" and find everything chicken-related across your entire food database
+- **Tag system** — tag meals with things like `低醣`, `可換地瓜`, `素食` and filter by them later
+- **Flexible portions** — log 0.25 of a serving when you only eat a quarter of your yogurt
+- **Self-built food database** — add local dishes with proper fields (name, brand, calories, unit) instead of free-form chaos
+- **Body stats tracking** — log weight, sleep quality, and water intake alongside your meals
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+---
 
-## Customize configuration
+## Tech Stack
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+| Category | Technology |
+|---|---|
+| Framework | Vue 3.5 + TypeScript |
+| Build Tool | Vite 6 |
+| State Management | Pinia (Setup Store) |
+| Routing | Vue Router 4 |
+| Styling | Tailwind CSS v4 (PostCSS) |
+| Testing | Vitest + Playwright |
+| Deployment | Vercel |
 
-## Project Setup
+## Vue 3 APIs Used
+
+- `ref` / `reactive` / `computed` — reactive state and derived values across all stores
+- `watch` — auto-persist settings to localStorage on change
+- `Composables` — `useWaterTracker`, `useToast` encapsulate reusable logic (replacing Vue 2 mixins)
+- `Pinia Setup Store` — `useFoodLog`, `useBodyStats`, `useSettings`, `useFoodDB`
+- `Teleport` — modal and toast rendered outside component tree to avoid z-index issues
+- `TransitionGroup` — animated food entry list (slide in / slide out)
+- `defineAsyncComponent` — lazy-load chart components on the Trend page
+- `provide / inject` — global theme and user settings passed down without prop drilling
+
+---
+
+## Project Structure
+
+---
+
+## Getting Started
 
 ```sh
 npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+### Build for Production
 
 ```sh
 npm run build
 ```
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+### Run Unit Tests
 
 ```sh
 npm run test:unit
 ```
 
-### Run End-to-End Tests with [Playwright](https://playwright.dev)
+### Run E2E Tests
 
 ```sh
-# Install browsers for the first run
 npx playwright install
-
-# When testing on CI, must build the project first
-npm run build
-
-# Runs the end-to-end tests
 npm run test:e2e
-# Runs the tests only on Chromium
-npm run test:e2e -- --project=chromium
-# Runs the tests of a specific file
-npm run test:e2e -- tests/example.spec.ts
-# Runs the tests in debug mode
-npm run test:e2e -- --debug
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+---
 
-```sh
-npm run lint
-```
+## Live Demo
+
+[gutcheck.vercel.app](https://gutcheck.vercel.app)
