@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import { createPinia, setActivePinia } from 'pinia'
+import { createPinia, setActivePinia, getActivePinia } from 'pinia'
 import { useSettings } from '@/stores/useSettings'
 import { useFoodLog } from '@/stores/useFoodLog'
 import { useBodyStats } from '@/stores/useBodyStats'
@@ -244,7 +244,7 @@ const suites: Suite[] = [
 const resultMap = ref<Record<string, TestResult>>({})
 const runningMap = ref<Record<string, boolean>>({})
 
-const appPinia = useSettings().$pinia
+const appPinia = getActivePinia()!
 
 function testKey(suiteName: string, testName: string) {
   return `${suiteName}::${testName}`
