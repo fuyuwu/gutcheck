@@ -2,6 +2,7 @@
   "name": "gutcheck",
   "version": "0.0.0",
   "private": true,
+  "author": "Fuyu Wu <fuyuwu041000@gmail.com>",
   "type": "module",
   "scripts": {
     "dev": "vite",

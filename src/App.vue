@@ -10,6 +10,7 @@ const navItems = [
   { name: 'log', path: '/log', icon: '📋', label: '記錄' },
   { name: 'trend', path: '/trend', icon: '📈', label: '趨勢' },
   { name: 'settings', path: '/settings', icon: '⚙️', label: '設定' },
+  { name: 'test', path: '/test', icon: '🧪', label: '測試' },
 ]
 
 const toastColors = {
@@ -21,8 +22,16 @@ const toastColors = {
 
 <template>
   <div class="min-h-screen bg-gray-50 flex flex-col">
+    <!-- 頂部 Header -->
+    <header class="sticky top-0 z-10 bg-white/80 backdrop-blur border-b border-gray-100">
+      <div class="max-w-2xl mx-auto px-4 h-12 flex items-center justify-between">
+        <span class="text-base font-bold text-emerald-600 tracking-tight">gutcheck</span>
+        <span class="text-xs text-gray-400">by Fufu</span>
+      </div>
+    </header>
+
     <!-- 主內容區 -->
-    <main class="flex-1 w-full max-w-2xl mx-auto px-4 pt-6 pb-24">
+    <main class="flex-1 w-full max-w-2xl mx-auto px-4 pt-5 pb-24">
       <RouterView />
     </main>
 

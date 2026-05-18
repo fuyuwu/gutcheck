@@ -27,22 +27,12 @@ function entriesForMeal(meal: FoodEntry['meal']) {
 function mealCalories(meal: FoodEntry['meal']) {
   return entriesForMeal(meal).reduce((sum, e) => sum + e.calories, 0)
 }
-
-const today = new Date().toLocaleDateString('zh-TW', {
-  year: 'numeric',
-  month: 'long',
-  day: 'numeric',
-  weekday: 'short',
-})
 </script>
 
 <template>
   <div class="flex flex-col gap-4">
     <!-- 頂部打招呼 -->
-    <div>
-      <h1 class="text-xl font-semibold text-gray-800">早安 👋</h1>
-      <p class="text-sm text-gray-400 mt-0.5">{{ today }}</p>
-    </div>
+    <h1 class="text-xl font-semibold text-gray-800">早安 👋</h1>
 
     <!-- 三格數據卡 -->
     <div class="flex items-center justify-between">

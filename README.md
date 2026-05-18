@@ -77,4 +77,13 @@ npm run test:e2e
 
 ## Live Demo
 
-[gutcheck.vercel.app](https://gutcheck.vercel.app)
+[gutcheck-fu.vercel.app](https://gutcheck-fu.vercel.app)
+
+---
+
+## Author
+
+**吳馥宇 Fuyu Wu**
+Frontend Developer · [fuyuwu041000@gmail.com](mailto:fuyuwu041000@gmail.com)
+
+© 2025 Fuyu Wu. All rights reserved.
